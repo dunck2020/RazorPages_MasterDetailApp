@@ -7,8 +7,6 @@ namespace RazorPages_MasterDetailApp.Models
 {
     public class Review
     {
-        //Model for instantiating user comments
-
         public int ReviewId { get; set; }
 
         public string UserName { get; set; }
