@@ -23,12 +23,28 @@ namespace RazorPages_MasterDetailApp.Models
 
         public List<Review> Reviews { get; set; }
 
-        public float AvgRating { get; set; }
+        public float AvgRating
+        {
+            get 
+            { 
+                return UpdateRating(); 
+            }
+        }
 
         public float UpdateRating()
         {
-            int average = 0;
-            // Test comment to fix branches
+            float average = 0;
+
+            if (Reviews.Count != 0)
+            {
+                float sum = 0;
+                foreach (var r in Reviews)
+                {
+                    sum += r.Rating;
+                }
+                average = sum / Reviews.Count;
+            }
+
             return average;
         }
     }
