@@ -17,7 +17,7 @@ namespace RazorPages_MasterDetailApp.Models
 
         public int PageCount { get; set; }
 
-        public string PubDate { get; set; }
+        public int PubYear { get; set; }
 
         public string Description { get; set; }
 
