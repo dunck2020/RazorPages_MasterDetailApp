@@ -21,13 +21,14 @@ namespace RazorPages_MasterDetailApp.Models
 
         public string Description { get; set; }
 
-        public List<String> Reviews { get; set; }
+        public List<Review> Reviews { get; set; }
 
         public float AvgRating { get; set; }
 
         public float UpdateRating()
         {
             int average = 0;
+            // Test comment to fix branches
             return average;
         }
     }
