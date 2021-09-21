@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Pages\Colin\" />
+    <Folder Include="Pages\John\" />
+    <Folder Include="Pages\Sammi\" />
   </ItemGroup>
 
 </Project>
