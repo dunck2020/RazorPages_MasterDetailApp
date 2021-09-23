@@ -23,7 +23,7 @@ namespace RazorPages_MasterDetailApp.Models
 
         public List<Review> Reviews { get; set; }
 
-        public float AvgRating
+        public double AvgRating
         {
             get 
             { 
@@ -31,13 +31,13 @@ namespace RazorPages_MasterDetailApp.Models
             }
         }
 
-        public float UpdateRating()
+        public double UpdateRating()
         {
-            float average = 0;
+            double average = 0;
 
             if (Reviews.Count != 0)
             {
-                float sum = 0;
+                double sum = 0;
                 foreach (var r in Reviews)
                 {
                     sum += r.Rating;
