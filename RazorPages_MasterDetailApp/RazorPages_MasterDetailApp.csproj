@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\Colin\" />
+    <Folder Include="Pages\John\" />
     <Folder Include="Pages\Sammi\" />
   </ItemGroup>
 

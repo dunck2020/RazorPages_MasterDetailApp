@@ -17,18 +17,34 @@ namespace RazorPages_MasterDetailApp.Models
 
         public int PageCount { get; set; }
 
-        public string PubDate { get; set; }
+        public int PubYear { get; set; }
 
         public string Description { get; set; }
 
         public List<Review> Reviews { get; set; }
 
-        public double AvgRating { get; set; }
-
-        public float UpdateRating()
+        public double AvgRating
         {
-            int average = 0;
-            // Test comment to fix branches
+            get 
+            { 
+                return UpdateRating(); 
+            }
+        }
+
+        public double UpdateRating()
+        {
+            double average = 0;
+
+            if (Reviews.Count != 0)
+            {
+                double sum = 0;
+                foreach (var r in Reviews)
+                {
+                    sum += r.Rating;
+                }
+                average = sum / Reviews.Count;
+            }
+
             return average;
         }
     }
