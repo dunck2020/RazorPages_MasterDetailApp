@@ -11,8 +11,8 @@ namespace RazorPages_MasterDetailApp.Data
         public static List<Book> Initialize()
         {
 
-            List<Book> bookList = new();
-            bookList.Add(new Book()
+            List<Book> bookList = new List<Book>(){
+            new Book()
             {
                 ID = 1000,
                 Title = "The Galaxy, and The Ground Within",
@@ -47,8 +47,8 @@ namespace RazorPages_MasterDetailApp.Data
                             UserName = "Fred"
                         }
                     },
-            });
-            bookList.Add(new Book()
+            },
+            new Book()
             {
                 ID = 2000,
                 Title = "Into The Wild",
@@ -85,8 +85,8 @@ namespace RazorPages_MasterDetailApp.Data
                             UserName = "Fred"
                         }
                     },
-            });
-            bookList.Add(new Book()
+            },
+            new Book()
             {
                 ID = 3000,
                 Title = "The Alchemist",
@@ -121,7 +121,7 @@ namespace RazorPages_MasterDetailApp.Data
                             UserName = "Booklist"
                         }
                     },
-            });
+            } }; 
             return bookList;
         }
     }
