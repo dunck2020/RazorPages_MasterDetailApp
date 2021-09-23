@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RazorPages_MasterDetailApp.Models;
+
 
 namespace RazorPages_MasterDetailApp.Models
 {
@@ -13,7 +15,7 @@ namespace RazorPages_MasterDetailApp.Models
 
         public string Author { get; set; }
 
-        public List<String> Genres { get; set; }
+        public string Genres { get; set; }
 
         public int PageCount { get; set; }
 
@@ -21,31 +23,36 @@ namespace RazorPages_MasterDetailApp.Models
 
         public string Description { get; set; }
 
-        public List<Review> Reviews { get; set; }
+        public string Review { get; set; }
 
-        public double AvgRating
-        {
-            get 
-            { 
-                return UpdateRating(); 
-            }
-        }
+        //First we will get the app working correctly then we can add review class
 
-        public double UpdateRating()
-        {
-            double average = 0;
+        //    public List<Review> ReviewID { get; set; }
 
-            if (Reviews.Count != 0)
-            {
-                double sum = 0;
-                foreach (var r in Reviews)
-                {
-                    sum += r.Rating;
-                }
-                average = sum / Reviews.Count;
-            }
+        //    public double AvgRating
+        //    {
+        //        get
+        //        {
+        //            return UpdateRating();
+        //        }
+        //    }
 
-            return average;
-        }
+        //    public double UpdateRating()
+        //    {
+        //        double average = 0;
+
+        //        if (ReviewID.Count != 0)
+        //        {
+        //            double sum = 0;
+        //            foreach (var r in ReviewID)
+        //            {
+        //                sum += r.Rating;
+        //            }
+        //            average = sum / ReviewID.Count;
+        //        }
+
+        //        return average;
+        //    }
+        //
     }
 }
