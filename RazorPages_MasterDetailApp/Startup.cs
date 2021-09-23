@@ -8,8 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RazorPages_MasterDetailApp.Data;
+
 using RazorPages_MasterDetailApp.Models;
+using Microsoft.EntityFrameworkCore;
+using RazorPages_MasterDetailApp.Data;
 
 namespace RazorPages_MasterDetailApp
 {
@@ -26,6 +28,9 @@ namespace RazorPages_MasterDetailApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<RazorPages_MasterDetailAppContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("RazorPages_MasterDetailAppContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
