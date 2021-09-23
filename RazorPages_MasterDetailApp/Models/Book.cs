@@ -23,7 +23,7 @@ namespace RazorPages_MasterDetailApp.Models
 
         public List<Review> Reviews { get; set; }
 
-        public float AvgRating { get; set; }
+        public double AvgRating { get; set; }
 
         public float UpdateRating()
         {

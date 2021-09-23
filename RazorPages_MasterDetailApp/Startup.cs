@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RazorPages_MasterDetailApp.Data;
+using RazorPages_MasterDetailApp.Models;
 
 namespace RazorPages_MasterDetailApp
 {
@@ -51,6 +53,7 @@ namespace RazorPages_MasterDetailApp
             {
                 endpoints.MapRazorPages();
             });
+            
         }
     }
 }
