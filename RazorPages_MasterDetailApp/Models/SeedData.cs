@@ -21,6 +21,7 @@ namespace RazorPages_MasterDetailApp.Models
                 }
 
                 context.Book.AddRange(
+
                     new Book()
                     {
                         Title = "The Galaxy, and The Ground Within",
@@ -68,10 +69,10 @@ namespace RazorPages_MasterDetailApp.Models
                         Genres = "Dystopian Fiction",
                         PageCount = 298,
                         PubYear = 1949,
-                        Description =   "In Orwell's depiction of what the future would look like, protagonist Winston Smith subsists" + 
+                        Description = "In Orwell's depiction of what the future would look like, protagonist Winston Smith subsists" +
                                         " beneath an authoritarian state, working as an editor revising the truth. His experiences as" +
                                         " an editor lead him on a quest to uncover the past, despite the deep surveillance of the government.",
-                        Review =        "An interesting read, but a bit stale at some points."
+                        Review = "An interesting read, but a bit stale at some points."
                     },
                     new Book()
                     {
@@ -80,9 +81,9 @@ namespace RazorPages_MasterDetailApp.Models
                         Genres = "Nonfiction, Programming",
                         PageCount = 862,
                         PubYear = 2004,
-                        Description =   "An extensive programming guidebook that describes all sections of software development" +
+                        Description = "An extensive programming guidebook that describes all sections of software development" +
                                         ", from the usefulness of iterative cycles, to the proper standards for commenting code.",
-                        Review =        "Amazing! Although I have yet to finish reading the book, it is incredibly detailed in all areas." +
+                        Review = "Amazing! Although I have yet to finish reading the book, it is incredibly detailed in all areas." +
                                         " In just a hundred pages, I was already better prepared to learn about development cycles."
                     });
                 context.SaveChanges();
