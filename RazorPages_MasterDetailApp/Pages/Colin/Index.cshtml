@@ -5,69 +5,37 @@
     ViewData["Title"] = "Index";
     Layout = "Shared/_coharouLayout";
 }
-
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Genres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].PageCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].PubYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Review)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Book) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PubYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review)
-            </td>
-            <td>
-                <!--<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |-->
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
-                <!--<a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>-->
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div>
+    <div>
+        @foreach (var b in Model.Book)
+         {
+            <div class="card m-4 border-dark">
+                <div class="card-body p-3">
+                    <h3 class="card-title">@Html.DisplayFor(modelItem => b.Title)</h3>
+                    <h4 class="card-subtitle text-muted">@Html.DisplayFor(modelItem => b.Author)</h4>
+                    <ul class="list-group list-group-horizontal mt-2 mb-2 border-0">
+                        <li class="list-group-item">
+                            <p class="card-text">
+                                @Html.DisplayNameFor(model => model.Book[0].Genres): 
+                                @Html.DisplayFor(modelItem => b.Genres)
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text">
+                                @Html.DisplayNameFor(model => model.Book[0].PubYear): 
+                                @Html.DisplayFor(modelItem => b.PubYear)
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <p class="card-text">
+                                @Html.DisplayNameFor(model => model.Book[0].PageCount): 
+                                @Html.DisplayFor(modelItem => b.PageCount)
+                            </p>
+                        </li>
+                    </ul>
+                    <a class="card-link p-2" asp-page="./Details" asp-route-id="@b.ID">More details...</a>
+                </div>
+            </div>
+         }
+    </div>
+</div>
