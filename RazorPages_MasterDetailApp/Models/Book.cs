@@ -25,7 +25,7 @@ namespace RazorPages_MasterDetailApp.Models
 
         public string Review { get; set; }
 
-        //First we will get the app working correctly then we can add review class
+        // First we will get the app working correctly then we can add review class
 
         //    public List<Review> ReviewID { get; set; }
 
