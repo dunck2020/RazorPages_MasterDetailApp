@@ -4,11 +4,23 @@
 @{
     ViewData["Title"] = "Details";
 }
+<style>
+    .tableContainer {
+        box-shadow: 4px 4px 4px;
+        border-radius: 20px;
+        background-color: navajowhite;
+        padding: 20px;
+        color: maroon;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    }
+</style>
 
-<h1>Details</h1>
-
-<div>
-    <h4>Book</h4>
+<div class="tableContainer">
+    <h4>Book Details</h4>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Book.ID" style="background-color: navajowhite; color: #8b795e;">Edit</a> |
+        <a asp-page="./Index"style="background-color: navajowhite; color: #8b795e;">Back to List</a>
+    </div>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -55,7 +67,4 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Book.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
