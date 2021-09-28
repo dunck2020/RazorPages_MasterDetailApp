@@ -6,13 +6,12 @@
     <title>@ViewData["Title"] - RazorPages_MasterDetailApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/coharouStyling.css"/>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <span class="navbar-brand">App Name</span>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm text-light bg-dark mb-2">
+            <div class="container-fluid">
+                <span class="font-weight-bold navbar-brand">The Book List</span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,22 +19,11 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="Index">Book List</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="Index">Home</a>
                         </li>
-                        <!--
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="">User Reviews</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="Create">Add Book</a>
                         </li>
-                        -->
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="Create">Add Book</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <div>Add Review</div>
-                            <a class="nav-link" asp-area="" asp-page="">Add Review</a>
-                        </li>
-                        -->
                     </ul>
                 </div>
             </div>
@@ -46,9 +34,9 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-light font-weight-light bg-dark text-center mt-2">
         <div class="container">
-            <p>Temporary footer</p>
+            <span>The Book List</span>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
