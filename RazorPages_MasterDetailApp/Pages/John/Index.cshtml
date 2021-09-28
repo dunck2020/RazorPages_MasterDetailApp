@@ -4,69 +4,137 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    a:hover {
+        background-color: white;
+    }
+    .tableItems {
+        background-color: navajowhite;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        color: maroon;
+    }
+    .tableContainer {
+        box-shadow: 4px 4px 4px;
+        border-radius: 20px;
+        background-color: navajowhite;
+        padding: 20px;
+    }
+    .h4headers {
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        font-size: 1em;
+        margin: 15px;
+    }
+    .filterItems {
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        float: right;
+        background: #8b795e;
+        color: navajowhite;
+        padding: 5px;
+        margin: 7px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1em;
+        display: inline;
+        
+    }
+</style>
+<h3 style="color: #8b795e; font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">BookSharp</h3>
+<form>
+    <p class="h4headers">
+        Filter by Genre
+        <select asp-for="BookGenres" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select>
+        <input type="submit" value="Filter" />
+    </p>
 
-<h1>John's Book Database</h1>
+    <p class="h4headers">
+        Filter by Author
+        <select asp-for="BookAuthors" asp-items="Model.Authors">
+            <option value="">All</option>
+        </select>
+        <input type="submit" value="Filter" />
+    </p>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Genres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].PageCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].PubYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Review)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Book) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PageCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PubYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Review)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <p class="h4headers">
+        Search by Title
+        <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<div class="tableContainer">
+    <a asp-page="./Index" asp-route-filterOrder="desc" class="filterItems">
+        Descending
+    </a>
+    <a asp-page="Create" class="filterItems">
+        Add New
+    </a>
+    <a asp-page="./Index" asp-route-filterOrder="asc" class="filterItems">
+        Reset
+    </a>
+
+    <table class="table table-responsive-md table-striped tableItems">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book[0].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book[0].Author)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book[0].Genres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book[0].PageCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Book[0].PubYear)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Book[0].Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Review)
+                    </th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Book)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PageCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PubYear)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Review)
+                        </td>*@
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.ID" style="color: #8b795e;">Details</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.ID" style="color: #8b795e;">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID" style="color: #8b795e;">Delete</a>
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
