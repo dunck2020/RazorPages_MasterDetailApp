@@ -5,9 +5,20 @@
     ViewData["Title"] = "Delete";
     Layout = "Shared/_coharouLayout";
 }
-<h1 class="display-4">Disabled until Sprint 3.</h1>
-<h1>Delete</h1>
-<form method="post">
-    <input type="hidden" asp-for="Book.ID" />
-    <input type="submit" value="Delete" class="btn btn-danger" /> |
-</form>
+<div class="container">
+    <div class="card m-2 border-dark">
+        <div class="card-body p-3">
+            <div class="card-title">
+                <h5 class="card-title">Book Deletion</h5>
+            </div>
+            <div class="card-text">
+                Are you sure that you want to delete "@Html.DisplayFor(model => model.Book.Title)" by @Html.DisplayFor(model => model.Book.Author)?
+                <br />Once the book has been deleted, it cannot be recovered.
+            </div>
+            <form method="post" class="mt-3">
+                <input type="hidden" asp-for="Book.ID" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </form>
+        </div>
+    </div>
+</div>
