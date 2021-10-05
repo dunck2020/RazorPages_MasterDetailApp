@@ -1,0 +1,25 @@
+﻿a:hover {
+    background-color: lightyellow;
+}
+
+.tableItems {
+    background-color: lightgray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkorange;
+}
+
+.tableProps {
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkorange;
+    background-color: lightgray;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkorange;
+    margin: 10px;
+    font-size: 10px;
+    text-shadow: 2px 2px 2px #000000;
+}
