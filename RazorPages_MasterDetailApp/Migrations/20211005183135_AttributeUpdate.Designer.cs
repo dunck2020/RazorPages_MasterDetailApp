@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RazorPages_MasterDetailApp.Data;
 
 namespace RazorPages_MasterDetailApp.Migrations
 {
     [DbContext(typeof(RazorPages_MasterDetailAppContext))]
-    partial class RazorPages_MasterDetailAppContextModelSnapshot : ModelSnapshot
+    [Migration("20211005183135_AttributeUpdate")]
+    partial class AttributeUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
