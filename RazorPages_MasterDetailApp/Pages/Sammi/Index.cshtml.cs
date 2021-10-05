@@ -28,8 +28,10 @@ namespace RazorPages_MasterDetailApp.Pages.Sammi
         public SelectList Genres { get; set; }
         public string TitleSort { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
+            TitleSort = sortOrder;
+
             IQueryable<string> genreQuery = from m in _context.Book
                                             orderby m.Genres
                                             select m.Genres;
