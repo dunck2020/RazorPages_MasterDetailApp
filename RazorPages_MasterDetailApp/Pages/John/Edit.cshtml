@@ -11,7 +11,7 @@
     <h4>Edit Book Details</h4>
     <hr />
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-10">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="Book.ID" />
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Book.Review" class="control-label"></label>
-                    <input asp-for="Book.Review" class="form-control" />
+                    <input asp-for="Book.Review" class="form-control"/>
                     <span asp-validation-for="Book.Review" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -58,7 +58,7 @@
     </div>
 
     <div>
-        <a asp-page="./Index" style="color: #8b795e;">Back to List</a>
+        <a class="anchorItems" asp-page="./Index">Back to List</a>
     </div>
 </div>
 @section Scripts {

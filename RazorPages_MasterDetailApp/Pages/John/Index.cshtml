@@ -28,8 +28,8 @@
 
     <p class="h4headers">
         Search by Title
-        <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Search" />
+        <input class="searchIcon" type="text" asp-for="SearchString" />
+        <input  type="submit" value="Search" />
     </p>
 </form>
 
@@ -56,19 +56,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Book[0].Genres)
                 </th>
-                @*<th>
-            @Html.DisplayNameFor(model => model.Book[0].PageCount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Book[0].PubYear)
-        </th>
-        <th>
-                @Html.DisplayNameFor(model => model.Book[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Book[0].Review)
-            </th>*@
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -84,22 +71,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Genres)
                 </td>
-                @*<td>
-                       @Html.DisplayFor(modelItem => item.PageCount)
-                </td>
                 <td>
-                       @Html.DisplayFor(modelItem => item.PubYear)
-                </td>
-                <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                @Html.DisplayFor(modelItem => item.Review)
-                  </td>*@
-                <td>
-                    <a asp-page="./Details" asp-route-id="@item.ID" style="color: #8b795e;">Details</a> |
-                    <a asp-page="./Edit" asp-route-id="@item.ID" style="color: #8b795e;">Edit</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID" style="color: #8b795e;">Delete</a>
+                    <a class="anchorItems" asp-page="./Details" asp-route-id="@item.ID" >Details</a> |
+                    <a class="anchorItems" asp-page="./Edit" asp-route-id="@item.ID" >Edit</a> |
+                    <a class="anchorItems" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
                 </td>
 
             </tr>

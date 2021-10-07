@@ -11,7 +11,7 @@
     <h4>Add a New Book</h4>
     <hr />
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-10">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Book.Description" class="control-label"></label>
-                    <input asp-for="Book.Description" class="form-control" />
+                    <input asp-for="Book.Description" class="form-control"/>
                     <span asp-validation-for="Book.Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -53,7 +53,7 @@
                     <input type="submit" value="Save" class="filterItems" />
                 </div>
                 <div>
-                    <a asp-page="Index" style="color: #8b795e;">Back to List</a>
+                    <a class="anchorItems" asp-page="Index">Back to List</a>
                 </div>
             </form>
         </div>
